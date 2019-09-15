@@ -1,3 +1,20 @@
+var du_lieu_la_so = {
+    Name: "Doe",
+    Gioitinh: 1,
+    Am_Lich: {
+        nam_al: 1990,
+        thang_al: 4,
+        ngay_al: 20,
+        gio_al: 2,
+    },
+    Duong_Lich: {
+        namdl: 1990,
+        thangdl: 4,
+        ngaydl: 20,
+        giodl: 2,
+    }
+};
+
 function addlist(txt, val, id) { //Tạo ra các giá trị cho list, với đầu vào là ID trong html của danh sách đó
     var option = document.createElement("option"); //Tạo ra 1 thẻ option
     option.text = txt; //Hiện thị giá trị cho người dùng nhìn thấy
@@ -51,7 +68,6 @@ function ShowHide_Duong_Am_Lich() {
 
 }
 ShowHide_Duong_Am_Lich();
-//set selected cho ngày tháng năm dương âm
 
 document.getElementById('id_name').value = "ansao.zz.mu";
 // document.getElementById('id_nam_nu').value = 1;
