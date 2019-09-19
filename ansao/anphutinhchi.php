@@ -1,20 +1,23 @@
 <?php
 // 
 // // Thái Tuế tinh hệ
-function an_phu_tinh_chi($chi_nam,&$obj_sao,&$obj_ngu_hanh){
+function an_phu_tinh_chi($chi_nam){
 	global $la_so_thien_ban;
 	global $id_menh_cung;
 	global $id_than_cung;
 	global $thang;
 	global $gio;
+	global $obj_ngu_hanh;
 $vi_tri_thai_tue = function () use ($chi_nam){
 	return Check($chi_nam-2);
 	
 };
 $vi_tri_thai_tue = $vi_tri_thai_tue();
-$obj = new Sao("Thái Tuế",$obj_ngu_hanh[1]);
+$obj = new Sao("Thái Tuế",$obj_ngu_hanh[2]);
 $obj->am_duong_sao=0;
 $obj->vi_tri = $vi_tri_thai_tue;
+$obj->loai="phu_tinh";
+$obj->cat_hung=1;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 //
@@ -25,6 +28,8 @@ $obj_sao[]=clone $obj;
 $obj = new Sao("Long Trì",$obj_ngu_hanh[5]);
 $obj->am_duong_sao=1;
 $obj->vi_tri = Check($chi_nam + 3 -1);
+$obj->loai="phu_tinh";
+$obj->cat_hung=0;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -33,9 +38,11 @@ $obj_sao[]=clone $obj;
 	// return Check(-$chi_nam + 9 + 1);
 // };
 // $vi_tri_phuong_cac = $vi_tri_phuong_cac();
-$obj = new Sao("Phượng Các",$obj_ngu_hanh[5]);
+$obj = new Sao("Phượng Các",$obj_ngu_hanh[1]);
 $obj->am_duong_sao=1;
 $obj->vi_tri = Check(-$chi_nam + 9 + 1);
+$obj->loai="phu_tinh";
+$obj->cat_hung=0;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -48,6 +55,8 @@ $obj_sao[]=clone $obj;
 $obj = new Sao("Thiên Khốc",$obj_ngu_hanh[4]);
 $obj->am_duong_sao=1;
 $obj->vi_tri = Check( - $chi_nam + 5 + 1);
+$obj->loai="phu_tinh";
+$obj->cat_hung=1;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -58,9 +67,11 @@ $obj_sao[]=clone $obj;
 // };
 // $vi_tri_thien_hu = $vi_tri_thien_hu();
 //
-$obj = new Sao("Thiên Hư",$obj_ngu_hanh[3]);
+$obj = new Sao("Thiên Hư",$obj_ngu_hanh[5]);
 $obj->am_duong_sao=0;
 $obj->vi_tri = Check(  $chi_nam + 5  - 1);
+$obj->loai="phu_tinh";
+$obj->cat_hung=1;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -69,9 +80,11 @@ $obj_sao[]=clone $obj;
 	// return Check( 8 + $chi_nam -1);
 // };
 // $vi_tri_thien_duc = $vi_tri_thien_duc();
-$obj = new Sao("Thiên Đức",$obj_ngu_hanh[3]);
+$obj = new Sao("Thiên Đức",$obj_ngu_hanh[2]);
 $obj->am_duong_sao=1;
 $obj->vi_tri = Check( 8 + $chi_nam -1);
+$obj->loai="phu_tinh";
+$obj->cat_hung=0;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -80,9 +93,11 @@ $obj_sao[]=clone $obj;
 	// return Check( 4 - $chi_nam + 1);
 // };
 // $vi_tri_nguyet_duc = $vi_tri_nguyet_duc();
-$obj = new Sao("Nguyệt Đức",$obj_ngu_hanh[3]);
+$obj = new Sao("Nguyệt Đức",$obj_ngu_hanh[2]);
 $obj->am_duong_sao=1;
 $obj->vi_tri = Check( 4 - $chi_nam + 1);
+$obj->loai="phu_tinh";
+$obj->cat_hung=0;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -96,6 +111,8 @@ $obj_sao[]=clone $obj;
 $obj = new Sao("Hồng Loan",$obj_ngu_hanh[5]);
 $obj->am_duong_sao=0;
 $obj->vi_tri = Check(2 - $chi_nam + 1);
+$obj->loai="phu_tinh";
+$obj->cat_hung=0;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -103,6 +120,8 @@ $obj_sao[]=clone $obj;
 $obj = new Sao("Thiên Hỷ",$obj_ngu_hanh[5]);
 $obj->am_duong_sao=1;
 $obj->vi_tri = Check(2 - $chi_nam + 1);
+$obj->loai="phu_tinh";
+$obj->cat_hung=0;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -112,9 +131,11 @@ $obj_sao[]=clone $obj;
 	
 // };
 // $vi_tri_thien_tai = $vi_tri_thien_tai();
-$obj = new Sao("Thiên Tài",$obj_ngu_hanh[1]);
+$obj = new Sao("Thiên Tài",$obj_ngu_hanh[3]);
 $obj->am_duong_sao=0;
 $obj->vi_tri = Check($id_menh_cung + $chi_nam -1);
+$obj->loai="phu_tinh";
+$obj->cat_hung=0;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -127,6 +148,8 @@ $obj_sao[]=clone $obj;
 $obj = new Sao("Thiên Thọ",$obj_ngu_hanh[3]);
 $obj->am_duong_sao=1;
 $obj->vi_tri =  Check($id_than_cung + $chi_nam -1);
+$obj->loai="phu_tinh";
+$obj->cat_hung=0;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -136,9 +159,11 @@ $vi_tri_co_than = function () use ($chi_nam){
 	return $co_than[$chi_nam];
 };
 $vi_tri_co_than = $vi_tri_co_than();
-$obj = new Sao("Cô Thần",$obj_ngu_hanh[5]);
+$obj = new Sao("Cô Thần",$obj_ngu_hanh[3]);
 $obj->am_duong_sao=1;
 $obj->vi_tri = $vi_tri_co_than;
+$obj->loai="phu_tinh";
+$obj->cat_hung=1;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -148,9 +173,11 @@ $vi_tri_qua_tu = function () use ($chi_nam){
 	return $qua_tu[$chi_nam];
 };
 $vi_tri_qua_tu = $vi_tri_qua_tu();
-$obj = new Sao("Quả Tú",$obj_ngu_hanh[5]);
+$obj = new Sao("Quả Tú",$obj_ngu_hanh[3]);
 $obj->am_duong_sao=1;
 $obj->vi_tri = $vi_tri_qua_tu;
+$obj->loai="phu_tinh";
+$obj->cat_hung=1;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -160,9 +187,11 @@ $vi_tri_dao_hoa = function () use($chi_nam){
 	return $dao_hoa[$chi_nam];
 };
 $vi_tri_dao_hoa = $vi_tri_dao_hoa();
-$obj = new Sao("Đào Hoa",$obj_ngu_hanh[5]);
+$obj = new Sao("Đào Hoa",$obj_ngu_hanh[1]);
 $obj->am_duong_sao=1;
 $obj->vi_tri = $vi_tri_dao_hoa;
+$obj->loai="phu_tinh";
+$obj->cat_hung=0;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -176,6 +205,8 @@ $obj = new Sao("Thiên Mã",$obj_ngu_hanh[2]);
 $obj->am_duong_sao=1;
 $obj->ten_nam_bac = "trung_dau";
 $obj->vi_tri = $vi_tri_thien_ma;
+$obj->loai="phu_tinh";
+$obj->cat_hung=0;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -191,6 +222,8 @@ $obj = new Sao("Kiếp Sát",$obj_ngu_hanh[2]);
 $obj->am_duong_sao=1;
 $obj->ten_nam_bac = "trung_dau";
 $obj->vi_tri = $vi_tri_kiep_sat;
+$obj->loai="phu_tinh";
+$obj->cat_hung=1;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -204,6 +237,8 @@ $vi_tri_pha_toai = $vi_tri_pha_toai();
 $obj = new Sao("Phá Toái",$obj_ngu_hanh[2]);
 $obj->am_duong_sao=0;
 $obj->vi_tri = $vi_tri_pha_toai;
+$obj->loai="phu_tinh";
+$obj->cat_hung=1;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
@@ -215,21 +250,27 @@ $vi_tri_hoa_cai = function () use ($chi_nam){
 	
 };
 $vi_tri_hoa_cai = $vi_tri_hoa_cai();
-$obj = new Sao("Hoa Cái",$obj_ngu_hanh[1]);
+$obj = new Sao("Hoa Cái",$obj_ngu_hanh[4]);
 $obj->am_duong_sao=1;
 $obj->vi_tri = $vi_tri_hoa_cai;
+$obj->loai="phu_tinh";
+$obj->cat_hung=0;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
-$obj = new Sao("Nguyệt Tướng",$obj_ngu_hanh[1]);
+$obj = new Sao("Nguyệt Tướng",$obj_ngu_hanh[2]);
 $obj->am_duong_sao=1;
 $obj->vi_tri = Check($chi_nam-2 - $thang +$gio);
+$obj->loai="phu_tinh";
+$obj->cat_hung=1;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 
-$obj = new Sao("Thiên Không",$obj_ngu_hanh[1]);
+$obj = new Sao("Thiên Không",$obj_ngu_hanh[2]);
 $obj->am_duong_sao=1;
 $obj->vi_tri = Check($chi_nam-2 +1);
+$obj->loai="phu_tinh";
+$obj->cat_hung=1;
 $la_so_thien_ban->obj_cung_vi[$obj->vi_tri]->sao[]=$obj;
 $obj_sao[]=clone $obj;
 

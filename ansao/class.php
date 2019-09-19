@@ -3,22 +3,16 @@ $MOC=1;$HOA=2;$KIM=4;$THUY=5;$THO=3;
 
 
 class Thong_tin{
-	public $can_nam;
-	public $chi_nam;
-	public $thang;
-	public $ngay;
-	public $gio;
-	public $gioi_tinh;
+	public $thong_tin_client;
+    public $menh;
+	public $cuc;
+	public $chu_menh;
+	public $chu_than;
+	public $can_chi;
+	
+
 	
 }
-$obj_thong_tin = new Thong_tin();
-$obj_thong_tin->can_nam = $can_nam;
-$obj_thong_tin->chi_nam = $chi_nam;
-$obj_thong_tin->thang = $thang;
-$obj_thong_tin->ngay = $ngay;
-$obj_thong_tin->gio = $gio;
-$obj_thong_tin->gioi_tinh = $gioi_tinh;
-
 
 
 class La_So{
@@ -99,7 +93,8 @@ class Sao{
 	public $nam_bac; // bắc = 1 nam =2 trung = 0
 	public $ten_nam_bac;
 	public $hoa_khi;
-	public $cat_hung;
+	public $cat_hung=1;
+	public $loai="phu_tinh";
 	public $am_duong_sao;
 	function __construct($ten,$ngu_hanh)
 	{
@@ -108,6 +103,9 @@ class Sao{
 
 	}
 }
+
+
+
 
 class  Cung_Vi
 {
@@ -128,6 +126,8 @@ class Cung_Chuc extends Cung_Vi{
 
 $ten_cung_chuc= array(1=>"Mệnh","Phụ Mẫu","Phúc Đức","Điền Trạch","Quan Lộc",
 "Giao Hữu","Thiên Di","Tật Ách","Tài Bạch","Tử Nũ","Phu Thê","Huynh Đệ");
+
+
 
 $obj_can[1]=new Can("Giáp",1);
 $obj_can[2]=new Can("Ất",2);
