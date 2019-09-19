@@ -56,15 +56,19 @@ for (var i = 1; i < 13; ++i)
     addlist(i, i, "id_thang_al");
 
 function ShowHide_Duong_Am_Lich() {
-    document.getElementById('id_lich_0').style.display = 'block';
-    document.getElementById('id_lich_1').style.display = 'block';
-    if (document.getElementById('id_am_duong_lich').checked)
+    document.getElementById('id_lich_0').style.display = 'block'; //âm lịch
+    document.getElementById('id_lich_1').style.display = 'block'; // dương lịch
+
+    if (document.getElementById('id_am_duong_lich').checked) //Hiển thị duong lịch
 
     {
         document.getElementById('id_lich_1').style.display = 'block'; //Hiện Dương Lịch
+        document.getElementById('id_lich_0').style.display = 'none';
+
 
     } else {
         document.getElementById('id_lich_0').style.display = 'block'; //Hiện âm lịch
+        document.getElementById('id_lich_1').style.display = 'none'; //Hiện Dương Lịch
 
     }
 
