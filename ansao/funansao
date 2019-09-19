@@ -1,0 +1,14 @@
+<?php
+
+function TuVi($ngay,$cuc_so){
+	
+	echo "11111111111";
+	
+}
+Tuvi();
+
+	
+
+
+
+?>

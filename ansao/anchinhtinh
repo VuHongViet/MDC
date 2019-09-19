@@ -1,0 +1,34 @@
+<?php
+function sign( $can_nam,$gioi_tinh) {
+      if ((($can_nam%2==1)&&($gioi_tinh==1))||(($can_nam%2==0)&&($gioi_tinh==0)))
+	  {
+		  $sign = 1;
+	  }		  
+	  else{ $sign = -1;}
+	  return $sign;
+}
+$sign =  sign( $can_nam,$gioi_tinh);
+
+
+$vi_tri_tu_vi = function() use($ngay,$cuc_so){
+	$X = $cuc_so - $ngay % $cuc_so;
+		if ($ngay % $cuc_so == 0)
+			$X = 0;
+		$Y = ($ngay + $X) / $cuc_so;
+		$z;
+		if ($X % 2 == 0)
+			$z = $Y + $X;
+		if ($X % 2 != 0)
+			$z = $Y - $X;
+		if ($z > 12)
+			$z = $z - 12;
+		if ($z < 1)
+			$z = Check($z + 12);
+		return $z;
+
+};
+
+
+
+
+?>

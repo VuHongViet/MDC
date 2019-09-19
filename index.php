@@ -20,7 +20,7 @@
 
 <body>
     <div class="container header">
-        <form action="xu_ly.php" method="POST" id="submit"> 
+        <form action="ansao/ansao.php" method="POST" id="submit"> 
             <div class="row">
                 <div class="col-md-12">
                     <input type="text" id="id_name" name="name" class="form-control" placeholder="Nhập Họ Tên">

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#submit').on('submit', function() {
+    $('#submit').on('submit', function(e) {
         //lấy tên input nhập vào
         du_lieu_la_so.Name = $('#id_name').val();
         if (du_lieu_la_so.Name == null || du_lieu_la_so.Name == "") {
@@ -18,14 +18,20 @@ $(document).ready(function() {
             du_lieu_la_so.Am_Lich.nam_al = lunar[2];
             du_lieu_la_so.Am_Lich.thang_al = lunar[1];
             du_lieu_la_so.Am_Lich.ngay_al = lunar[0];
+            du_lieu_la_so.Can_nam = (du_lieu_la_so.Am_Lich.nam_al-183-1)%10+1;
+            du_lieu_la_so.Chi_nam = (du_lieu_la_so.Am_Lich.nam_al-183-1)%12+1;
             // Ngược lại nếu là âm lịch
         } else {
+          
             du_lieu_la_so.Am_Lich.nam_al = parseInt($('#id_nam_al').val());
             du_lieu_la_so.Am_Lich.thang_al = parseInt($('#id_thang_al').val());
             du_lieu_la_so.Am_Lich.ngay_al = parseInt($('#id_ngay_al').val());
             du_lieu_la_so.Am_Lich.gio_al = parseInt($('#id_gio_al').val());
+
+            du_lieu_la_so.Can_nam = (du_lieu_la_so.Am_Lich.nam_al-183-1)%10+1;
+            du_lieu_la_so.Chi_nam = (du_lieu_la_so.Am_Lich.nam_al-183-1)%12+1;
             //convert sang dương lịch
-            let = convertLunar2Solar(du_lieu_la_so.Am_Lich.ngay_aL, du_lieu_la_so.Am_Lich.thang_aL, du_lieu_la_so.Am_Lich.nam_aL, 0, 7);
+            let solar = convertLunar2Solar(du_lieu_la_so.Am_Lich.ngay_al, du_lieu_la_so.Am_Lich.thang_al, du_lieu_la_so.Am_Lich.nam_al, 0, 7);
             du_lieu_la_so.Duong_Lich.ngaydl = solar[0];
             du_lieu_la_so.Duong_Lich.thangdl = solar[1];
             du_lieu_la_so.Duong_Lich.namdl = solar[2];

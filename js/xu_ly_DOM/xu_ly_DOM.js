@@ -12,7 +12,9 @@ var du_lieu_la_so = {
         thangdl: 4,
         ngaydl: 20,
         giodl: 2,
-    }
+    },
+    Can_nam:3,
+    Chi_nam:1
 };
 
 function addlist(txt, val, id) { //Tạo ra các giá trị cho list, với đầu vào là ID trong html của danh sách đó
